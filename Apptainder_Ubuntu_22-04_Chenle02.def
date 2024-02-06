@@ -3,7 +3,7 @@ From: ubuntu:22.04
 
 %post
     # Update and install basic tools
-    apt-get update && apt-get install -y wget curl git vim zsh python3.10 python3-pip nodejs npm texlive-full biber gzip htop
+    apt-get update && apt-get install -y wget curl git vim zsh python3.10 python3-pip nodejs npm gzip htop
 
     # Install neovim
     apt-get install -y neovim
@@ -26,7 +26,7 @@ From: ubuntu:22.04
     apt-get install -y nodejs
 
     # Install Python packages
-    pip3 install sphinx pygments joblib pytest
+    pip3 install sphinx pygments joblib pytest matplotlib numpy pandas scikit-learn scipy seaborn myst_parser imageio
 
     # Install Rust and Cargo
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
