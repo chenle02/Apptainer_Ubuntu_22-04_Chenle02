@@ -53,7 +53,8 @@ From: ubuntu:22.04
       ruby-dev \
       tmux \
       build-essential \
-      exuberant-ctags
+      exuberant-ctags \
+      texlive-full
 
 
     # Install lua
