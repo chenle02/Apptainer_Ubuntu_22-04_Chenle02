@@ -7,8 +7,8 @@ sudo apptainer build Apptainder_Ubuntu_22-04_Chenle02.sif Apptainder_Ubuntu_22-0
 
 2. Build the sandbox
 ```
-apptainer build sandbox Apptainder_Ubuntu_22-04_Chenle02.sif ~/Apptainer_Ubutntu_22-04_Chenel02
-```
+apptainer build --sandbox  ~/Apptainer_Ubutntu_22-04_Chenel02 Apptainder_Ubuntu_22-04_Chenle02.sif
+``` 
 
 3. Use it
 ```
