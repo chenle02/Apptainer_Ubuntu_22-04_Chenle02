@@ -89,8 +89,7 @@ From: ubuntu:22.04
         imageio \
         jedi-language-server \
         flake8-nb \
-        pyright \
-        python3-neovim
+        pyright
 
     # Cleanup
     apt-get clean

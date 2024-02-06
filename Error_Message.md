@@ -25,3 +25,13 @@ See https://github.com/AppImage/AppImageKit/wiki/FUSE
 for more information
 FATAL:   While performing build: while running engine: exit status 1
 ```
+
+3. pip install python3-neovim error
+```
+
+
+ERROR: Could not find a version that satisfies the requirement python3-neovim (from versions: none)
+ERROR: No matching distribution found for python3-neovim
+FATAL:   While performing build: while running engine: exit status 1
+
+```
