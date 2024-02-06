@@ -24,8 +24,11 @@ From: ubuntu:22.04
       htop \
       tzdata
 
-    # Install neovim
-    apt-get install -y neovim
+    # Install neovim following:
+    # https://github.com/neovim/neovim/blob/master/INSTALL.md
+    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+    chmod u+x nvim.appimage
+    ./nvim.appimage
 
 
     # Install lazygit from GitHub releases
@@ -86,7 +89,8 @@ From: ubuntu:22.04
         imageio \
         jedi-language-server \
         flake8-nb \
-        pyright
+        pyright \
+        python3-neovim
 
     # Cleanup
     apt-get clean
