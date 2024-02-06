@@ -22,14 +22,14 @@ From: ubuntu:22.04
       npm \
       gzip \
       htop \
-      tzdata
+      tzdata \
+      tar
 
-    # Install neovim following:
+    # Install neovim following (from download now):
     # https://github.com/neovim/neovim/blob/master/INSTALL.md
-    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-    chmod u+x nvim.appimage
-    ./nvim.appimage
-
+    wget https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz -O /tmp/nvim-linux64.tar.gz
+    tar xzvf /tmp/nvim-linux64.tar.gz -C /opt
+    ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/nvim
 
     # Install lazygit from GitHub releases
     LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
