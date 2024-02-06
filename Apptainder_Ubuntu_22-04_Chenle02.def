@@ -41,7 +41,21 @@ From: ubuntu:22.04
     apt-get install nodejs npm -y
 
     # Install Python packages
-    pip3 install sphinx pygments joblib pytest matplotlib numpy pandas scipy seaborn myst_parser imageio
+    pip3 install \
+        sphinx \
+        pygments \
+        joblib \
+        pytest \
+        matplotlib \
+        numpy \
+        pandas \
+        scipy \
+        seaborn \
+        myst_parser \
+        imageio \
+        jedi-language-server \
+        flake8-nb \
+        pyright
 
     # Cleanup
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
