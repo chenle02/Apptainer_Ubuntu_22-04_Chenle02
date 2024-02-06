@@ -24,10 +24,13 @@ From: ubuntu:22.04
     # Install oh-my-zsh
     sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
-    # Install vifm, fzf, delta, fd, rg, bat, smenu
+    # Install vifm, fzf, fd, rg, bat, smenu
     apt-get install -y vifm fzf fd-find ripgrep bat smenu
-    wget https://github.com/dandavison/delta/releases/latest/download/git-delta_0.8.3_amd64.deb -O git-delta.deb
-    dpkg -i git-delta.deb
+
+    # Install delta diff tool version 0.16.5
+    # https://github.com/dandavison/delta/releases
+    wget https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_0.16.5_amd64.deb -O git-delta.deb
+    dpkg -i git-delta.deb || apt-get install -f -y
     rm git-delta.deb
 
     # Install Node.js and npm (if the provided versions by the distro are not the ones you want, use nvm or node source)
