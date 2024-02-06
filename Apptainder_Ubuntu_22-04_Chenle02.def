@@ -24,8 +24,8 @@ From: ubuntu:22.04
     # Install oh-my-zsh
     sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
-    # Install vifm, fzf, fd, rg, bat, smenu
-    apt-get install -y vifm fzf fd-find ripgrep bat smenu
+    # Install vifm, fzf, fd, rg, bat, smenu, cargo
+    apt-get install -y vifm fzf fd-find ripgrep bat smenu cargo
 
     # Install delta diff tool version 0.16.5
     # https://github.com/dandavison/delta/releases
@@ -33,24 +33,19 @@ From: ubuntu:22.04
     dpkg -i git-delta.deb || apt-get install -f -y
     rm git-delta.deb
 
-    # Install Node.js and npm (if the provided versions by the distro are not the ones you want, use nvm or node source)
-    curl -sL https://deb.nodesource.com/setup_14.x | bash -
-    apt-get install -y nodejs
+    # Install nodejs, npm
+    apt-get install nodejs npm -y
 
     # Install Python packages
-    pip3 install sphinx pygments joblib pytest matplotlib numpy pandas scikit-learn scipy seaborn myst_parser imageio
-
-    # Install Rust and Cargo
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    pip3 install sphinx pygments joblib pytest matplotlib numpy pandas scipy seaborn myst_parser imageio
 
     # Cleanup
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-    
     apt-get update && apt-get install -y \
         tzdata \
         # other packages you need to install
-    
+
     # Clean up
     rm -rf /var/lib/apt/lists/*
 
