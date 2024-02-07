@@ -25,6 +25,17 @@ From: ubuntu:22.04
       tzdata \
       tar
 
+    # Install gh
+    # 1. Add the GitHub CLI repository GPG key
+    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+    chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+
+    # 2. Add the GitHub CLI repository to the sources list
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+
+    # 3. Update the package list and install the GitHub CLI
+    apt-get install gh -y
+
     # Install neovim following (from download now):
     # https://github.com/neovim/neovim/blob/master/INSTALL.md
     wget https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz -O /tmp/nvim-linux64.tar.gz
@@ -55,7 +66,6 @@ From: ubuntu:22.04
       build-essential \
       exuberant-ctags \
       texlive-full
-
 
     # Install lua
     apt-get install -y \
